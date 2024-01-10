@@ -1,0 +1,12 @@
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animated-header {
+  animation: fadeInDown 0.5s ease-out;
+}
