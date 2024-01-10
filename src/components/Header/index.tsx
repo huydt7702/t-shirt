@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import images from 'src/assets/images';
 import { PATH_PUBLIC } from 'src/routes/path';
 import { CartIcon, UserIcon } from '../Icons';
+import './styles.css';
 
 export default function Header() {
   const [showHeader, setShowHeader] = useState<boolean>(true);
@@ -24,7 +25,7 @@ export default function Header() {
   return (
     <div
       className={`max-md:border max-md:border-transparent max-md:border-b-[#ededed] flex items-center justify-between bg-white px-5 max-sm:px-3 h-[89px] ${
-        !showHeader ? 'fixed z-[999] top-0 left-0 right-0 shadow-[rgba(43,52,69,0.1)_0px_4px_16px]' : ''
+        !showHeader ? 'fixed z-[999] top-0 left-0 right-0 shadow-[rgba(43,52,69,0.1)_0px_4px_16px] animated-header' : ''
       }`}
     >
       <ul className='flex gap-6 max-md:hidden'>
