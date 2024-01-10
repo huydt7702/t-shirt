@@ -1,15 +1,18 @@
 import { Image } from '@nextui-org/react';
-import { BsSearch } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { BsSearch } from 'react-icons/bs';
+import { HiMiniBars3 } from 'react-icons/hi2';
+import { Link } from 'react-router-dom';
 
 import images from 'src/assets/images';
 import { PATH_PUBLIC } from 'src/routes/path';
 import { CartIcon, UserIcon } from '../Icons';
+import Sidebar from './Sidebar';
 import './styles.css';
 
 export default function Header() {
   const [showHeader, setShowHeader] = useState<boolean>(true);
+  const [isShowSidebar, setIsShowSidebar] = useState<boolean>(false);
 
   useEffect(() => {
     const scrollPosition = 360;
@@ -23,9 +26,9 @@ export default function Header() {
   }, []);
 
   return (
-    <div
-      className={`max-md:border max-md:border-transparent max-md:border-b-[#ededed] flex items-center justify-between bg-white px-5 max-sm:px-3 h-[89px] ${
-        !showHeader ? 'fixed z-[999] top-0 left-0 right-0 shadow-[rgba(43,52,69,0.1)_0px_4px_16px] animated-header' : ''
+    <header
+      className={`max-md:border-b max-md:border-solid max-md:border-b-[#ededed] flex items-center justify-between bg-white px-5 max-sm:px-3 h-[89px] ${
+        !showHeader ? 'fixed z-[99] top-0 left-0 right-0 shadow-[rgba(43,52,69,0.1)_0px_4px_16px] animated-header' : ''
       }`}
     >
       <ul className='flex gap-6 max-md:hidden'>
@@ -51,15 +54,21 @@ export default function Header() {
           <BsSearch className='absolute right-2 top-[50%] translate-y-[-50%]' />
         </div>
         <div className='flex items-center gap-3'>
-          <UserIcon className='cursor-pointer' />
-          <span className='relative'>
-            <CartIcon className='cursor-pointer' />
-            <span className='absolute bottom-[-6px] right-[-8px] text-sm bg-[#ffceba] rounded-full w-[20px] h-[20px] flex justify-center items-center'>
-              0
+          <button>
+            <UserIcon />
+          </button>
+          <button className='relative bottom-[-1px]'>
+            <CartIcon />
+            <span className='absolute bottom-[-3px] right-[-6px] text-xs bg-[#ffceba] rounded-full w-[16px] h-[16px] flex justify-center items-center'>
+              3
             </span>
-          </span>
+          </button>
+          <button className='scale-[130%] lg:hidden' onClick={() => setIsShowSidebar(true)}>
+            <HiMiniBars3 />
+          </button>
+          <Sidebar isShowSidebar={isShowSidebar} setIsShowSidebar={setIsShowSidebar} />
         </div>
       </div>
-    </div>
+    </header>
   );
 }

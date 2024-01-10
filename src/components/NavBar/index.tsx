@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-interface IListNav {
+export interface IListNav {
   label: string;
   path: string;
   style?: string;
@@ -28,17 +28,17 @@ const listNav: IListNav[] = [
   {
     label: 'Clothing & Accessories',
     path: '#',
-    style: 'max-lg:hidden'
+    style: 'max-[1120px]:hidden'
   },
   {
     label: 'Collections',
     path: '#',
-    style: 'max-lg:hidden'
+    style: 'max-[1120px]:hidden'
   },
   {
     label: 'Sale',
     path: '#',
-    style: 'max-lg:hidden'
+    style: 'max-[1120px]:hidden'
   }
 ];
 
