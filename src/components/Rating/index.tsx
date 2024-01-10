@@ -1,6 +1,9 @@
 const RatingStar = ({ percentage }: { percentage: number }) => {
-  const integerPart = Math.floor(percentage); // Get the integer part of the rating
-  const decimalPart = percentage - integerPart; // Get the decimal part
+  const percentStar = percentage > 5 ? 5 : percentage;
+
+  const integerPart = Math.floor(percentStar);
+  const decimalPart = percentStar - integerPart;
+
   const starElement = [];
   for (let i = 0; i < integerPart; i++) {
     starElement.push(
@@ -17,7 +20,7 @@ const RatingStar = ({ percentage }: { percentage: number }) => {
     );
   }
   if (decimalPart > 0) {
-    const fillPercentage = `${decimalPart * 100}%`;
+    const fillPercentage = `${(decimalPart * 100).toFixed(0)}%`;
 
     starElement.push(
       <svg
