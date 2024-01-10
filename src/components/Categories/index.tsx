@@ -11,7 +11,7 @@ interface IProps {
 
 export default function Categories({ data, title }: IProps) {
   return (
-    <div className='mx-[60px] max-sm:mx-3'>
+    <div className='mx-[60px] max-sm:mx-3 max-lg:mx-6'>
       <div className='flex items-center gap-5 mt-16 mb-8 text-xl max-sm:mt-10 max-sm:mb-4'>
         <h3 className='font-bold ml-[10px]'>{title}</h3>
       </div>
