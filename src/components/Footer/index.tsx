@@ -9,7 +9,7 @@ import Image from '../Image';
 export default function Footer() {
   return (
     <div>
-      <div className='flex flex-wrap gap-6 px-[50px] pb-[55px] max-sm:px-5 max-sm:pb-6 max-sm:pt-3 pt-10 items-center bg-[#faf8f4]'>
+      <div className='flex flex-wrap gap-6 px-[50px] pb-[55px] max-sm:px-5 max-sm:pb-6 max-sm:pt-3 max-md:px-8 max-md:pb-8 max-md:pt-5 pt-10 items-center bg-[#faf8f4]'>
         <div className='grid flex-1 grid-cols-4 mt-12 gap-x-2 gap-y-6 max-lg:grid-cols-2 max-md:hidden'>
           <div>
             <h3 className='font-bold uppercase'>Shop</h3>
