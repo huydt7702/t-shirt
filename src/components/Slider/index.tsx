@@ -20,22 +20,24 @@ export default function Slider() {
   ];
 
   return (
-    <Slide arrows={false}>
-      {slides.map((slide) => (
-        <div
-          key={slide.id}
-          style={{
-            position: 'relative',
-            backgroundImage: `url(${slide.image})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: '460px',
-            width: '100%'
-          }}
-        >
-          <Button className='absolute bottom-[40px] right-[150px] bg-white font-bold min-w-[120px]'>Shop Sale</Button>
-        </div>
-      ))}
-    </Slide>
+    <div className='max-md:hidden'>
+      <Slide arrows={false}>
+        {slides.map((slide) => (
+          <div
+            key={slide.id}
+            style={{
+              position: 'relative',
+              backgroundImage: `url(${slide.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              height: '460px',
+              width: '100%'
+            }}
+          >
+            <Button className='absolute bottom-[40px] right-[150px] bg-white font-bold min-w-[120px]'>Shop Sale</Button>
+          </div>
+        ))}
+      </Slide>
+    </div>
   );
 }

@@ -6,6 +6,7 @@
 
 html {
   font-family: 'Nunito', sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html::-webkit-scrollbar {

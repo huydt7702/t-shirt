@@ -23,11 +23,11 @@ export default function Header() {
 
   return (
     <div
-      className={`flex items-center justify-between bg-white px-5 h-[89px] ${
+      className={`max-md:border max-md:border-transparent max-md:border-b-[#ededed] flex items-center justify-between bg-white px-5 max-sm:px-3 h-[89px] ${
         !showHeader ? 'fixed z-[999] top-0 left-0 right-0 shadow-[rgba(43,52,69,0.1)_0px_4px_16px]' : ''
       }`}
     >
-      <ul className='flex gap-6'>
+      <ul className='flex gap-6 max-md:hidden'>
         <li>
           <Link to='#'>rewards</Link>
         </li>
@@ -41,7 +41,7 @@ export default function Header() {
       </Link>
 
       <div className='flex items-center'>
-        <div className='relative flex items-center mr-3'>
+        <div className='relative flex items-center mr-3 max-sm:hidden'>
           <input
             type='text'
             placeholder='search'
