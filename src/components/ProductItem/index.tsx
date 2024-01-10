@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { IProduct } from 'src/common';
 import formatterPrice from 'src/helpers/formatPrice';
 import Image from '../Image';
@@ -10,6 +12,8 @@ interface IProps {
 }
 
 export default function ProductItem({ data, view }: IProps) {
+  const [colorSelected, setColorSelected] = useState<number>(1);
+
   return (
     <div className='mx-[10px]'>
       <Link to='#' className='block overflow-hidden'>
@@ -36,9 +40,24 @@ export default function ProductItem({ data, view }: IProps) {
         </p>
         {view === 'Second' || (
           <div className='flex items-center gap-1'>
-            <button className='w-[14px] h-[14px] rounded-full bg-[#d5b59a] border border-solid border-[#333]'></button>
-            <button className='w-[14px] h-[14px] rounded-full bg-[#2b292d] border border-solid'></button>
-            <button className='w-[14px] h-[14px] rounded-full bg-[#82413f] border border-solid'></button>
+            <button
+              className={`w-[14px] h-[14px] rounded-full bg-[#d5b59a] border border-solid ${
+                colorSelected === 1 ? 'border-[#333]' : ''
+              }`}
+              onClick={() => setColorSelected(1)}
+            ></button>
+            <button
+              className={`w-[14px] h-[14px] rounded-full bg-[#2b292d] border border-solid ${
+                colorSelected === 2 ? 'border-[#333]' : ''
+              }`}
+              onClick={() => setColorSelected(2)}
+            ></button>
+            <button
+              className={`w-[14px] h-[14px] rounded-full bg-[#82413f] border border-solid ${
+                colorSelected === 3 ? 'border-[#333]' : ''
+              }`}
+              onClick={() => setColorSelected(3)}
+            ></button>
           </div>
         )}
         {view === 'Second' && (
