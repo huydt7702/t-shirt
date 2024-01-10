@@ -26,13 +26,9 @@ export default function Slider() {
           <div
             key={slide.id}
             style={{
-              position: 'relative',
-              backgroundImage: `url(${slide.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              height: '460px',
-              width: '100%'
+              backgroundImage: `url(${slide.image})`
             }}
+            className='relative bg-cover bg-center h-[460px] w-full'
           >
             <Button className='absolute bottom-[40px] right-[150px] bg-white font-bold min-w-[120px]'>Shop Sale</Button>
           </div>

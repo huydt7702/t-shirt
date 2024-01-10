@@ -10,14 +10,6 @@ const routers: RouteObject[] = [
       {
         index: true,
         lazy: () => import('../pages/HomePage')
-      },
-      {
-        path: PATH_PUBLIC.cart,
-        lazy: () => import('../pages/CartPage')
-      },
-      {
-        path: PATH_PUBLIC.orders,
-        lazy: () => import('../pages/OrderPage')
       }
     ]
   }

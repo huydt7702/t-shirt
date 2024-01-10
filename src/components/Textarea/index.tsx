@@ -1,11 +1,12 @@
 import { Textarea, type TextAreaProps } from '@nextui-org/react';
 import { Controller, useFormContext } from 'react-hook-form';
+
 interface ITextareaProps extends TextAreaProps {
   name: string;
   message?: string;
 }
 
-export default function Textareas({ name, ...passProps }: ITextareaProps) {
+export default function TextareaComp({ name, ...passProps }: ITextareaProps) {
   const {
     control,
     formState: { errors }

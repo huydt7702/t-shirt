@@ -5,6 +5,5 @@ interface ICheckboxProps extends CheckboxProps {
 }
 
 export default function CheckBoxItem({ onCheck, ...passProps }: ICheckboxProps) {
-  // const [checked, setChecked] = useState<boolean>(false)
   return <Checkbox {...passProps} onChange={onCheck} />;
 }

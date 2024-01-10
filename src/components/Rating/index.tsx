@@ -19,6 +19,7 @@ const RatingStar = ({ percentage }: { percentage: number }) => {
       </svg>
     );
   }
+
   if (decimalPart > 0) {
     const fillPercentage = `${(decimalPart * 100).toFixed(0)}%`;
 
@@ -43,6 +44,7 @@ const RatingStar = ({ percentage }: { percentage: number }) => {
       </svg>
     );
   }
+
   return <div className='flex items-center'>{starElement}</div>;
 };
 
