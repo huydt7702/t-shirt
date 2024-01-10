@@ -26,17 +26,13 @@ export default function Layout() {
 
   return (
     <div className='relative'>
-      <div>
-        <TopBar />
-        <Header />
-        <NavBar />
-      </div>
+      <TopBar />
+      <Header />
+      <NavBar />
       <div>
         <Outlet />
       </div>
-      <div>
-        <Footer />
-      </div>
+      <Footer />
       <button
         className={`fixed bottom-16 right-2 z-[500] flex items-center justify-center w-12 h-12 bg-gradient-to-r from-[#ff7eb9] to-[#ffcc00] rounded-full hover:opacity-80 transition-all ${
           scrollY >= 1200 ? 'opacity-100' : 'opacity-0 pointer-events-none'

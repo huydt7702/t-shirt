@@ -28,7 +28,7 @@ export default function Slider() {
             style={{
               backgroundImage: `url(${slide.image})`
             }}
-            className='relative bg-cover bg-center h-[460px] w-full'
+            className='relative bg-cover bg-no-repeat bg-center h-[460px] w-full'
           >
             <Button className='absolute bottom-[40px] right-[150px] bg-white font-bold min-w-[120px]'>Shop Sale</Button>
           </div>

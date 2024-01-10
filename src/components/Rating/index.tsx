@@ -26,7 +26,7 @@ const RatingStar = ({ percentage }: { percentage: number }) => {
     starElement.push(
       <svg
         key='partialStar'
-        className='w-4 h-4 text-btlack me-1'
+        className='w-4 h-4 text-black me-1'
         aria-hidden='true'
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 22 20'
