@@ -1,10 +1,9 @@
-import { Image } from '@nextui-org/react';
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { HiMiniBars3 } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
-import images from 'src/assets/images';
+import { Logo } from 'src/components/Icons';
 import { IListNav } from 'src/components/NavBar';
 import { PATH_PUBLIC } from 'src/routes/path';
 import '../styles.css';
@@ -68,7 +67,7 @@ export default function Sidebar({ isShowSidebar, setIsShowSidebar }: IProps) {
         >
           <header className='flex items-center justify-between p-3 border-b border-solid border-[#ededed]'>
             <Link to={PATH_PUBLIC.home}>
-              <Image src={images.logo} alt='Logo' className='w-[167px] h-[61px]' />
+              <Logo className='rectBackground' />
             </Link>
             <button
               className='flex justify-center items-center w-[40px] h-[40px] rounded-full hover:bg-[rgba(0,0,0,0.05)] transition-background'

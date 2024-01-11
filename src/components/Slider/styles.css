@@ -1,0 +1,18 @@
+.boxSlide > div > ul > .indicator.active > div::after {
+  width: 9px;
+  height: 9px;
+  top: 50%;
+  left: 50%;
+  content: '';
+  border-radius: 300px;
+  position: absolute;
+  transform: translate(-50%, -50%) scaleX(1);
+  background-color: #ffb4b4;
+}
+
+.boxSlide > div > ul {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+}

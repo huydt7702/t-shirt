@@ -2,6 +2,7 @@ import { Button } from '@nextui-org/react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import images from 'src/assets/images';
+import './styles.css';
 
 export default function Slider() {
   const slides = [
@@ -19,9 +20,15 @@ export default function Slider() {
     }
   ];
 
+  const renderDotted = () => (
+    <div className='indicator'>
+      <div className='relative border border-solid border-[#ffa0a0] w-[16px] h-[16px] rounded-full m-[0.25rem] cursor-pointer '></div>
+    </div>
+  );
+
   return (
-    <div className='max-md:hidden'>
-      <Slide arrows={false}>
+    <div className='relative max-md:hidden boxSlide'>
+      <Slide indicators={() => renderDotted()} arrows={false}>
         {slides.map((slide) => (
           <div
             key={slide.id}

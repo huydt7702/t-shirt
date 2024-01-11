@@ -1,12 +1,10 @@
-import { Image } from '@nextui-org/react';
 import { useEffect, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { HiMiniBars3 } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
-import images from 'src/assets/images';
 import { PATH_PUBLIC } from 'src/routes/path';
-import { CartIcon, UserIcon } from '../Icons';
+import { CartIcon, Logo, UserIcon } from '../Icons';
 import Sidebar from './Sidebar';
 import './styles.css';
 
@@ -41,7 +39,7 @@ export default function Header() {
       </ul>
 
       <Link to={PATH_PUBLIC.home}>
-        <Image src={images.logo} alt='Logo' className='w-[167px] h-[61px]' />
+        <Logo className='rectBackground' />
       </Link>
 
       <div className='flex items-center'>
