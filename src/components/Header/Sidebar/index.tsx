@@ -52,8 +52,11 @@ function Sidebar({ isShowSidebar, setIsShowSidebar }: IProps) {
     if (!isShowSidebar) return;
 
     document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = '16px';
+
     return () => {
       document.body.style.overflow = 'scroll';
+      document.body.style.paddingRight = '0px';
     };
   }, [isShowSidebar]);
 
@@ -61,7 +64,7 @@ function Sidebar({ isShowSidebar, setIsShowSidebar }: IProps) {
     <React.Fragment>
       {createPortal(
         <nav
-          className={`fixed right-0 top-0 bottom-0 max-sm:min-w-full max-lg:min-w-[320px] bg-white z-[999] transition-transform ${
+          className={`fixed right-0 top-0 bottom-0 max-sm:w-full max-lg:w-[320px] bg-white z-[999] transition-transform ${
             isShowSidebar ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
