@@ -1,3 +1,11 @@
+function generateUUID(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
 const RatingStar = ({ percentage }: { percentage: number }) => {
   const percentStar = percentage > 5 ? 5 : percentage;
 
@@ -8,7 +16,7 @@ const RatingStar = ({ percentage }: { percentage: number }) => {
   for (let i = 0; i < integerPart; i++) {
     starElement.push(
       <svg
-        key={i}
+        key={generateUUID()}
         className='w-4 h-4 text-[#ffacb2] me-1'
         aria-hidden='true'
         xmlns='http://www.w3.org/2000/svg'
@@ -33,8 +41,8 @@ const RatingStar = ({ percentage }: { percentage: number }) => {
       >
         <defs>
           <linearGradient id='starGradient' x1='0%' y1='0%' x2='100%' y2='0%'>
-            <stop offset={`${fillPercentage}`} style={{ stopColor: '#ffacb2', stopOpacity: 1 }} />
-            <stop offset={`${fillPercentage}`} style={{ stopColor: 'black', stopOpacity: 1 }} />
+            <stop offset={`${fillPercentage}`} stopColor='#ffacb2' stopOpacity='1' />
+            <stop offset={`${fillPercentage}`} stopColor='#333' stopOpacity='1' />
           </linearGradient>
         </defs>
         <path
