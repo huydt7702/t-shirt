@@ -105,7 +105,7 @@ function Header() {
           <button className='relative bottom-[-1px]' onClick={() => setIsShowSidebarCart(true)}>
             <CartIcon />
             <span className='absolute bottom-[-3px] right-[-6px] text-xs bg-[#ffceba] rounded-full w-[16px] h-[16px] flex justify-center items-center'>
-              3
+              7
             </span>
           </button>
           <SidebarCart isShowSidebar={isShowSidebarCart} setIsShowSidebar={setIsShowSidebarCart} />
