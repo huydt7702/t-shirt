@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { HiMiniBars3 } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { CartIcon, Logo, UserIcon } from '../Icons';
 import Sidebar from './Sidebar';
 import './styles.css';
 
-export default function Header() {
+function Header() {
   const [showHeader, setShowHeader] = useState<boolean>(true);
   const [isShowSidebar, setIsShowSidebar] = useState<boolean>(false);
 
@@ -21,6 +21,8 @@ export default function Header() {
       scrollPosition < newScrollPosition && setShowHeader(false);
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -70,3 +72,7 @@ export default function Header() {
     </header>
   );
 }
+
+const MemoizedHeader = memo(Header);
+
+export default MemoizedHeader;
