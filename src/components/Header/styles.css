@@ -43,3 +43,20 @@
 .rectBackground {
   animation: rectFade 5s ease-in-out 2s infinite normal both;
 }
+
+.scrollbar-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-sidebar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.scrollbar-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-sidebar:hover::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+}

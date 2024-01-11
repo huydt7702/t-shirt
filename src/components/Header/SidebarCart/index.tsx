@@ -55,6 +55,54 @@ const listProductCart: IProductCart[] = [
     size: ['M', 'L', 'XL'],
     id: '3',
     quantity: 1
+  },
+  {
+    createdAt: '2024-01-07T18:50:39.635Z',
+    name: 'Áo thun form rộng Paradox tay lỡ - Unisex - In hình - THE REVERIE',
+    price: 118600,
+    color: ['Red', 'Green', 'Blue'],
+    totalReview: 29,
+    rating: 4,
+    thumbnail: 'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lq06lsaox0s735',
+    size: ['M', 'L', 'XL'],
+    id: '4',
+    quantity: 5
+  },
+  {
+    createdAt: '2024-01-08T06:12:59.052Z',
+    name: 'Áo Thun Cổ Tròn Tshirt Nữ Nam Unisex Chất Vải Thun Cotton Khủng Long Trăng MAT 012',
+    price: 118000,
+    color: ['Red', 'Green', 'Blue'],
+    totalReview: 90,
+    rating: 4.5,
+    thumbnail: 'https://down-vn.img.susercontent.com/file/vn-11134211-23030-nw4838dyceov21',
+    size: ['M', 'L', 'XL'],
+    id: '5',
+    quantity: 2
+  },
+  {
+    createdAt: '2024-01-07T18:50:39.635Z',
+    name: 'Nữ và nam cỡ lớn tay ngắn cổ tròn t-shirt rời couple top',
+    price: 133000,
+    color: ['Red', 'Green', 'Blue'],
+    totalReview: 34,
+    rating: 5,
+    thumbnail: 'https://down-vn.img.susercontent.com/file/sg-11134201-7qvg0-ljz8h6x4dnsn7e',
+    size: ['M', 'L', 'XL'],
+    id: '6',
+    quantity: 6
+  },
+  {
+    createdAt: '2024-01-07T18:50:39.635Z',
+    name: 'Áo thun nam OVERSIZE T Shirt Basic TB23',
+    price: 250000,
+    color: ['Red', 'Green', 'Blue'],
+    totalReview: 45,
+    rating: 4,
+    thumbnail: 'https://down-vn.img.susercontent.com/file/vn-11134207-23010-4x1uzwh3wwlv0b',
+    size: ['M', 'L', 'XL'],
+    id: '7',
+    quantity: 3
   }
 ];
 
@@ -84,7 +132,7 @@ function SidebarCart({ isShowSidebar, setIsShowSidebar }: IProps) {
           <header className='flex items-center justify-between p-3 border-b border-solid border-[#ededed] h-[86px]'>
             <span className='flex items-center gap-3 ml-3'>
               <CartIcon />
-              {'3 items'}
+              {'7 items'}
             </span>
             <button
               className='flex justify-center items-center w-[40px] h-[40px] rounded-full hover:bg-[rgba(0,0,0,0.05)] transition-background'
@@ -93,7 +141,7 @@ function SidebarCart({ isShowSidebar, setIsShowSidebar }: IProps) {
               <GrClose className='scale-110 opacity-80' />
             </button>
           </header>
-          <ul>
+          <ul className='h-[calc(100vh-166px)] overflow-y-auto scrollbar-sidebar'>
             {listProductCart.map((item) => (
               <li key={item.id} className='flex items-center gap-4 px-5 py-4'>
                 <Link to='#' className='shrink-0'>
@@ -113,9 +161,11 @@ function SidebarCart({ isShowSidebar, setIsShowSidebar }: IProps) {
               </li>
             ))}
           </ul>
-          <Button className='border font-bold bg-white border-solid border-[#fb9191] absolute rounded-lg left-4 right-4 bottom-5 text-[#333]'>
-            View Cart
-          </Button>
+          <div className='absolute bottom-0 left-0 right-0 h-[80px] border-t border-solid border-[#ededed] flex items-center justify-center bg-white'>
+            <Button className='border font-bold bg-white border-solid border-[#fb9191] rounded-lg text-[#333] w-[90%]'>
+              View Cart
+            </Button>
+          </div>
         </nav>,
         rootElement
       )}

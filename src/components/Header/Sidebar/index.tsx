@@ -64,7 +64,7 @@ function Sidebar({ isShowSidebar, setIsShowSidebar }: IProps) {
     <React.Fragment>
       {createPortal(
         <nav
-          className={`fixed right-0 top-0 bottom-0 max-sm:w-full max-lg:w-[320px] bg-white z-[999] transition-transform ${
+          className={`fixed right-0 top-0 bottom-0 max-sm:w-full w-[320px] bg-white z-[999] transition-transform ${
             isShowSidebar ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -79,7 +79,7 @@ function Sidebar({ isShowSidebar, setIsShowSidebar }: IProps) {
               <HiMiniBars3 className='scale-125' />
             </button>
           </header>
-          <ul className='mt-4'>
+          <ul className='h-[calc(100vh-86px)] overflow-y-auto py-4 scrollbar-sidebar'>
             {listNav.map((item, key) => (
               <li key={key}>
                 <Link
