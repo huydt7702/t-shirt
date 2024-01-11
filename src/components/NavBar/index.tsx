@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 export interface IListNav {
@@ -42,7 +43,7 @@ const listNav: IListNav[] = [
   }
 ];
 
-export default function NavBar() {
+function NavBar() {
   return (
     <div className='max-md:hidden w-full bg-white h-[44px] flex items-center justify-center uppercase gap-x-12 px-5 border border-transparent border-b-[#ededed]'>
       <p className='inline-block text-sm font-extrabold text-transparent bg-gradient-to-r from-[#fcba93] via-[#baec00] to-[#00f080] bg-clip-text'>
@@ -60,3 +61,7 @@ export default function NavBar() {
     </div>
   );
 }
+
+const MemoizedNavBar = memo(NavBar);
+
+export default MemoizedNavBar;

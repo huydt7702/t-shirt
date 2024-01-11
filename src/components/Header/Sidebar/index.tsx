@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { HiMiniBars3 } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
@@ -47,7 +47,7 @@ const listNav: IListNav[] = [
 
 const rootElement = document.getElementById('root') as Element;
 
-export default function Sidebar({ isShowSidebar, setIsShowSidebar }: IProps) {
+function Sidebar({ isShowSidebar, setIsShowSidebar }: IProps) {
   useEffect(() => {
     if (!isShowSidebar) return;
 
@@ -100,3 +100,7 @@ export default function Sidebar({ isShowSidebar, setIsShowSidebar }: IProps) {
     </React.Fragment>
   );
 }
+
+const MemoizedSidebar = memo(Sidebar);
+
+export default MemoizedSidebar;

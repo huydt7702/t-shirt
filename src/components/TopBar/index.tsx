@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
 
-export default function TopBar() {
+function TopBar() {
   return (
     <div className='h-[30px] flex relative justify-center items-center bg-gradient-to-r from-[#ffb4b4] to-[#7e8bff]'>
       <p className='text-sm text-[#333]'>
@@ -10,3 +11,7 @@ export default function TopBar() {
     </div>
   );
 }
+
+const MemoizedTopBar = memo(TopBar);
+
+export default MemoizedTopBar;
